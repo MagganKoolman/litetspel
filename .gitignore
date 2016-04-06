@@ -14,10 +14,20 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# VS STUDIO STUFF
+*.dll
+*.exe
+*.ilk
+*.pdb
+*.tlog
+*.obj
+*.log
+*.idb
+*.opendb
+*.db
+
 # Windows shortcuts
 *.lnk
-
-*.vc.opendb
 
 # =========================
 # Operating System Files
