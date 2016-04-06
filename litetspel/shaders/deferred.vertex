@@ -1,0 +1,12 @@
+#version 420 core
+
+in vec3 pos ;
+in vec3 color ;
+
+out vec3 posOut;
+out vec3 colorOut;
+
+void main(){
+	posOut = pos;
+	colorOut = color;
+}

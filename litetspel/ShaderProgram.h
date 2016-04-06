@@ -14,15 +14,17 @@ public:
 	void linkShaders();
 	void addAttribute(const std::string& attributeName);
 
-	void use();
-	void unUse();
+	virtual void use() = 0;
+	virtual void unUse() = 0;
 	GLuint getProgramID() const;
-private:
-	GLuint programID;
-	GLuint vertexShader;
-	GLuint fragmentShader;
-	GLuint geometryShader;
+protected:
+	GLuint mProgramID;
+	GLuint mVertexShader;
+	GLuint mPixelShader;
+	GLuint mGeometryShader;
 
-	int numAttributes;
-	void compileShader(const std::string& filePath, GLuint shaderID);
+	int mTotalAttributes;
+	void compileShader(const string& content, GLuint shaderID);
+	void findAttribute(const string &content);
+	string readShader(const string &filePath);
 };

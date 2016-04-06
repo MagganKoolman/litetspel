@@ -8,7 +8,7 @@
 using namespace std;
 
 int screen_width = 1080;
-int screen_height = 900;
+int screen_height = 720;
 
 void initWindow(SDL_Window* window) {
 	window = SDL_CreateWindow("Try hard!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width, screen_height, SDL_WINDOW_OPENGL);
@@ -32,6 +32,8 @@ int main(int argc, char** argv) {
 	chrono::milliseconds timeStamp2;
 	long long dt = timeStamp.count();
 	bool running = true;
+
+	Game game;
 
 	while (running)
 	{

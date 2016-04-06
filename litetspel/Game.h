@@ -1,12 +1,14 @@
 #pragma once
 #include "GameState.h"
+#include "DeferredProgram.h"
 
 class Game {
 public:
+	bool update();
+
 	Game();
 	~Game();
-
-	bool update();
 private:
-	GameState* actionState;
+	GameState* pActionState;
+	ShaderProgram* pDeferredProgram;
 };
