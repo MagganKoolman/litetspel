@@ -16,20 +16,31 @@ enum
 class Input
 {
 public:
-    bool Update();
+    /* Polls SDL for events and updates the internal state if the input handler.*/
+    bool update();
 
-    bool KeyDown( int key );
-    bool KeyUp( int key );
-    bool KeyPressed( int key );
-    bool KeyReleased( int key );
+    /* Returns true if the key is currently down. Use the SDLK_ enum as parameter.*/
+    bool keyDown( int key );
+    /* Returns true if the key is currently up. Use the SDLK_ enum as parameter.*/
+    bool keyUp( int key );
+    /* Returns true if the key is currently down and previously up. Use the SDLK_ enum as parameter.*/
+    bool keyPressed( int key );
+    /* Returns true if the key is currently up and previously down. Use the SDLK_ enum as parameter.*/
+    bool keyReleased( int key );
 
-    bool ButtonDown( int button );
-    bool ButtonUp( int button );
-    bool ButtonPressed( int button );
-    bool ButtonReleased( int button );
+    /* Returns true if the button is currently down. Use MBUTTON_ enum as parameter.*/
+    bool buttonDown( int button );
+    /* Returns true if the button is currently up. Use MBUTTON_ enum as parameter.*/
+    bool buttonUp( int button );
+    /* Returns true if the button is currently down and previously up. Use MBUTTON_ enum as parameter.*/
+    bool buttonPressed( int button );
+    /* Returns true if the button is currently up and previously down. Use MBUTTON_ enum as parameter.*/
+    bool buttonReleased( int button );
 
-    glm::vec2 MousePosition();
-    glm::vec2 MouseDelta();
+    /* Returns the current mouse position.*/
+    glm::vec2 mousePosition();
+    /* Returns the difference in mouse position from the last frame.*/
+    glm::vec2 mouseDelta();
     
     Input& operator=( const Input& ref );
     Input( const Input& ref );

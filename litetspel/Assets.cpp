@@ -1,24 +1,24 @@
 #include "Assets.h"
 
-void Assets::Unload()
+void Assets::unload()
 {
-	for( map<string,Asset*>::iterator it = mAssets.begin(); it != mAssets.end(); it++ )
-	{
-		it->second->Unload();
-		delete it->second;
-	}
+    for( map<string,Asset*>::iterator it = mAssets.begin(); it != mAssets.end(); it++ )
+    {
+        it->second->unload();
+        delete it->second;
+    }
 
-	mAssets.clear();
+    mAssets.clear();
 }
 
 Assets& Assets::operator=( const Assets& ref )
 {
-	mAssets = ref.mAssets;
-	return *this;
+    mAssets = ref.mAssets;
+    return *this;
 }
 
 Assets::Assets( const Assets& ref )
-	: mAssets( ref.mAssets )
+    : mAssets( ref.mAssets )
 {
 }
 
@@ -28,5 +28,5 @@ Assets::Assets()
 
 Assets::~Assets()
 {
-	Unload();
+    unload();
 }

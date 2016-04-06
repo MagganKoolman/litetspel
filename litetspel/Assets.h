@@ -8,42 +8,42 @@ using std::string;
 class Asset
 {
 public:
-	virtual bool Load( string file ) = 0;
-	virtual void Unload() = 0;
+    virtual bool load( string file ) = 0;
+    virtual void unload() = 0;
 };
 
 class Assets
 {
 public:
-	/*Load an asset from a file.*/
-	template<typename T> T* Load( string file )
-	{
-		T* result = nullptr;
+    /*Load an asset from a file. Returns a pointer to the asset if successful or nullptr if not.*/
+    template<typename T> T* load( string file )
+    {
+        T* result = nullptr;
 
-		map<string,Asset*>::const_iterator it = mAssets.find( file );
-		if( it != mAssets.end() )
-			result = it->second;
-		else
-		{
-			result = new T();
-			if( !result->Load( file ) )
-			{
-				delete result;
-				result = nullptr;
-			}
-		}
+        map<string,Asset*>::const_iterator it = mAssets.find( file );
+        if( it != mAssets.end() )
+            result = it->second;
+        else
+        {
+            result = new T();
+            if( !result->load( file ) )
+            {
+                delete result;
+                result = nullptr;
+            }
+        }
 
-		return result;
-	}
-	
-	/*Unloads all assets.*/
-	void Unload();
+        return result;
+    }
+    
+    /*Unloads all assets and deletes them.*/
+    void unload();
 
-	Assets& operator=( const Assets& ref );
-	Assets( const Assets& ref );
-	Assets();
-	~Assets();
+    Assets& operator=( const Assets& ref );
+    Assets( const Assets& ref );
+    Assets();
+    ~Assets();
 
 private:
-	map<string,Asset*> mAssets;
+    map<string,Asset*> mAssets;
 };

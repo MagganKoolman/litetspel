@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-bool Texture::Load( string file )
+bool Texture::load( string file )
 {
     bool result = false;
 
@@ -21,7 +21,7 @@ bool Texture::Load( string file )
     return result;
 }
 
-void Texture::Unload()
+void Texture::unload()
 {
     if( mID > 0 )
         glDeleteTextures( 1, &mID );

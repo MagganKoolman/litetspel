@@ -1,6 +1,6 @@
 #include "Input.h"
 
-bool Input::Update()
+bool Input::update()
 {
     bool result = true;
 
@@ -46,21 +46,21 @@ bool Input::Update()
     return result;
 }
 
-bool Input::KeyDown( int key )
+bool Input::keyDown( int key )
 {
     if( key < 0 || key >= MAX_KEYS )
         return false;
     return mCurKeys[key];
 }
 
-bool Input::KeyUp( int key )
+bool Input::keyUp( int key )
 {
     if( key < 0 || key >= MAX_KEYS )
         return false;
     return !mCurKeys[key];
 }
 
-bool Input::KeyPressed( int key )
+bool Input::keyPressed( int key )
 {
     if( key < 0 || key >= MAX_KEYS )
         return false;
@@ -69,7 +69,7 @@ bool Input::KeyPressed( int key )
     return mCurKeys[key];
 }
 
-bool Input::KeyReleased( int key )
+bool Input::keyReleased( int key )
 {
     if( key < 0 || key >= MAX_KEYS )
         return false;
@@ -78,21 +78,21 @@ bool Input::KeyReleased( int key )
     return mPrevKeys[key];
 }
 
-bool Input::ButtonDown( int button )
+bool Input::buttonDown( int button )
 {
     if( button < 0 || button >= MAX_BUTTONS )
         return false;
     return mCurButtons[button];
 }
 
-bool Input::ButtonUp( int button )
+bool Input::buttonUp( int button )
 {
     if( button < 0 || button >= MAX_BUTTONS )
         return false;
     return !mCurButtons[button];
 }
 
-bool Input::ButtonPressed( int button )
+bool Input::buttonPressed( int button )
 {
     if( button < 0 || button >= MAX_BUTTONS )
         return false;
@@ -101,7 +101,7 @@ bool Input::ButtonPressed( int button )
     return mCurButtons[button];
 }
 
-bool Input::ButtonReleased( int button )
+bool Input::buttonReleased( int button )
 {
     if( button < 0 || button >= MAX_BUTTONS )
         return false;
@@ -110,12 +110,12 @@ bool Input::ButtonReleased( int button )
     return mPrevButtons[button];
 }
 
-glm::vec2 Input::MousePosition()
+glm::vec2 Input::mousePosition()
 {
     return mCurMouse;
 }
 
-glm::vec2 Input::MouseDelta()
+glm::vec2 Input::mouseDelta()
 {
     return ( mPrevMouse - mCurMouse );
 }

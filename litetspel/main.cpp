@@ -42,9 +42,9 @@ int main(int argc, char** argv) {
 		dt = timeStamp2.count() - timeStamp.count();
 		timeStamp = timeStamp2;
 
-		running = input.Update();
+		running = input.update();
 
-		if( input.KeyPressed( SDLK_ESCAPE ) )
+		if( input.keyPressed( SDLK_ESCAPE ) )
 			running = false;
 	}
 	return 0;
