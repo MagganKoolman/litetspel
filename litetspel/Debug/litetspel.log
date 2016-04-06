@@ -1,2 +1,2 @@
-﻿  main.cpp
-  litetspel.vcxproj -> c:\users\koolakidsenpåstan\documents\visual studio 2015\Projects\litetspel\Debug\litetspel.exe
+﻿  Game.cpp
+c:\users\niclas\source\repos\litetspel\litetspel\game.cpp(13): error C4716: 'Game::update': must return a value

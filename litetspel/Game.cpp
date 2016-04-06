@@ -9,5 +9,5 @@ Game::~Game() {
 }
 
 bool Game::update() {
-
+	return true;
 }
