@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include <SDL\SDL.h>
 #include "Game.h"
+#include "Input.h"
 
 using namespace std;
 
@@ -33,6 +34,8 @@ int main(int argc, char** argv) {
 	long long dt = timeStamp.count();
 	bool running = true;
 
+	Input input;
+
 	Game game;
 
 	while (running)
@@ -40,8 +43,11 @@ int main(int argc, char** argv) {
 		timeStamp2 = chrono::duration_cast<chrono::milliseconds>(chrono::system_clock::now().time_since_epoch());
 		dt = timeStamp2.count() - timeStamp.count();
 		timeStamp = timeStamp2;
-		running = !GetAsyncKeyState(VK_ESCAPE);
+
+		running = input.update();
+
+		if( input.keyPressed( SDLK_ESCAPE ) )
+			running = false;
 	}
 	return 0;
 }
-
