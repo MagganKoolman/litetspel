@@ -8,7 +8,9 @@ using std::string;
 class Asset
 {
 public:
+	/* abstract function, can't call */
     virtual bool load( string file ) = 0;
+	/* abstract function, can't call */
     virtual void unload() = 0;
 };
 
@@ -22,7 +24,7 @@ public:
 
         map<string,Asset*>::const_iterator it = mAssets.find( file );
         if( it != mAssets.end() )
-            result = it->second;
+            result = (T*)it->second;
         else
         {
             result = new T();
