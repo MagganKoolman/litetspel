@@ -4,6 +4,7 @@
 #include <glm\gtx\quaternion.hpp>
 #include "Mesh.h"
 #include "Texture.h"
+#include "Input.h"
 
 class GameObject
 {
