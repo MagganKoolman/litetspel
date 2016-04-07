@@ -8,9 +8,9 @@ using std::string;
 class Asset
 {
 public:
-	/* abstract function, can't call */
+    /*Abstract function, don't call */
     virtual bool load( string file ) = 0;
-	/* abstract function, can't call */
+    /*Abstract function, don't call */
     virtual void unload() = 0;
 };
 

@@ -15,27 +15,27 @@ bool Input::update()
     SDL_Event e;
     while( SDL_PollEvent( &e ) )
     {
-        if( e.type == SDL_QUIT )
+        if( e.type == SDL_QUIT ) // user pressed the X button of the window
             result = false;
-        if( e.type == SDL_KEYDOWN )
+        else if( e.type == SDL_KEYDOWN ) // user pressed a key
         {
             int key = e.key.keysym.sym;
             if( key >= 0 && key < MAX_KEYS )
                 mCurKeys[key] = true;
         }
-        else if( e.type == SDL_KEYUP )
+        else if( e.type == SDL_KEYUP ) // user released a key
         {
             int key = e.key.keysym.sym;
             if( key >= 0 && key < MAX_KEYS )
                 mCurKeys[key] = false;
         }
-        else if( e.type == SDL_MOUSEBUTTONDOWN )
+        else if( e.type == SDL_MOUSEBUTTONDOWN ) // user pressed a mouse button
         {
             int button = e.button.button-1; // SDL_BUTTON_LEFT is 1, we want it to be 0
             if( button >= 0 && button < MAX_BUTTONS )
                 mCurButtons[button] = true;
         }
-        else if( e.type == SDL_MOUSEBUTTONUP )
+        else if( e.type == SDL_MOUSEBUTTONUP ) // user released a mouse button
         {
             int button = e.button.button-1;
             if( button >= 0 && button < MAX_BUTTONS )

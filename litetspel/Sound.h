@@ -6,7 +6,9 @@
 class Sound : public Asset
 {
 public:
+    /* Load a sounds from a file. Returns true if the load was successful.*/
     bool load( string& file );
+    /* Unloads the sound. */
     void unload();
     
     Sound& operator=( const Sound& ref );

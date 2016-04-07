@@ -7,9 +7,9 @@
 class Texture : public Asset
 {
 public:
-    /* Loads a texture from the file supplied to the method. Returns true if load was successful.*/
+    /*Loads a texture from the file supplied to the method. Returns true if load was successful.*/
     bool load( string file );
-    /* Destroys the texture and frees the memory in the GPU.*/
+    /*Destroys the texture and frees the memory in the GPU.*/
     void unload();
 
     Texture& operator=( const Texture& ref );

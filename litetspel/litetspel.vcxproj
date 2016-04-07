@@ -154,6 +154,7 @@
     <ClCompile Include="Assets.cpp" />
     <ClCompile Include="DeferredProgram.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="DeferredProgram.h" />
     <ClInclude Include="Assets.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="ShaderProgram.h" />
