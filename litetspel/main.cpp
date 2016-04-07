@@ -6,10 +6,14 @@
 #include "Game.h"
 #include "Input.h"
 
+#include "FbxImport.h"
+
 using namespace std;
 
 int screen_width = 1080;
 int screen_height = 720;
+
+FbxImport* pFbx = new FbxImport;
 
 void initWindow(SDL_Window* window) {
 	window = SDL_CreateWindow("Try hard!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screen_width, screen_height, SDL_WINDOW_OPENGL);
@@ -22,6 +26,8 @@ void initWindow(SDL_Window* window) {
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	glClearColor(0.7f, 0.7f, 1.0f, 1.0);
 	glEnable(GL_DEPTH_TEST);
+
+	pFbx->initializeImporter();
 }
 
 int main(int argc, char** argv) {
@@ -48,6 +54,13 @@ int main(int argc, char** argv) {
 
 		if( input.keyPressed( SDLK_ESCAPE ) )
 			running = false;
+	}
+
+	if (pFbx)
+	{
+		delete pFbx;
+
+		pFbx = 0;
 	}
 	return 0;
 }
